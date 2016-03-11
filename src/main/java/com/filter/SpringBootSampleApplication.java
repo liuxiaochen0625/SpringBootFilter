@@ -28,6 +28,16 @@ public class SpringBootSampleApplication {
     public ServletRegistrationBean servletRegistrationBean() {
         return new ServletRegistrationBean(new MyServlet(), "/xs/*");// ServletName默认值为首字母小写，即myServlet
     }
+    
+    //可以修改url的匹配规则
+//    @Bean
+//    public ServletRegistrationBean dispatcherRegistration(DispatcherServlet dispatcherServlet) {
+//        ServletRegistrationBean registration = new ServletRegistrationBean(dispatcherServlet);
+//        registration.getUrlMappings().clear();
+//        registration.addUrlMappings("*.do");
+//        registration.addUrlMappings("*.json");
+//        return registration;
+//    }
  
     public static void main(String[] args) {
         SpringApplication.run(SpringBootSampleApplication.class, args);
